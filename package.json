@@ -1,0 +1,22 @@
+{
+  "name": "medium-api-with_clap",
+  "version": "1.0.0",
+  "description": "Medium Api with Claps",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "medium"
+  ],
+  "author": "Sabesan Sathananthan",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "cheerio": "^1.0.0-rc.10",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "request": "^2.88.2"
+  }
+}
