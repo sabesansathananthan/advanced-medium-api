@@ -19,10 +19,18 @@ app.get("/", (req, res) => {
   res.send("Hello, Welcome to the Advanced Medium API");
 });
 
-app.get(`/advanced/medium/user/:userId`, async (req, res) => {
-  res.send(await mediumAPIService(req.params.userId, true));
+app.get(`/advanced/customized/user/:userId`, async (req, res) => {
+  res.send(await mediumAPIService(req.params.userId, "ac"));
+});
+
+app.get(`/customized/user/:userId`, async (req, res) => {
+  res.send(await mediumAPIService(req.params.userId, "c"));
 });
 
 app.get(`/medium/user/:userId`, async (req, res) => {
-  res.send(await mediumAPIService(req.params.userId, false));
+  res.send(await mediumAPIService(req.params.userId, "n"));
+});
+
+app.get(`/advanced/user/:userId`, async (req, res) => {
+  res.send(await mediumAPIService(req.params.userId, "an"));
 });
