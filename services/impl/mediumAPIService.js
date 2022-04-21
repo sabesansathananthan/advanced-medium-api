@@ -58,32 +58,6 @@ const mediumAPIService = async (userName) => {
 
       const tagArticleWithRow = [];
 
-      // tagArticle.forEach(async (item, i) => {
-      //   const row = Math.floor(i / 3);
-      //   const element = item.guid.split("/");
-      //   const postId = element[element.length - 1];
-      //   const postLink = item.guid;
-      //   const clapCount = await scrapRequest(postLink, postId);
-      //   console.log(clapCount, "SABE");
-
-      //   let postContent = {
-      //     author: item.author,
-      //     avatar: item.avatar,
-      //     content: item.content,
-      //     link: item.guid,
-      //     postImage: item.thumbnail,
-      //     profileLink: item.profileLink,
-      //     pubDate: item.pubDate,
-      //     tag: item.tag,
-      //     tagOrder: item.tagNo,
-      //     title: item.title,
-      //     clapCount: clapCount,
-      //   };
-
-      //   if (!tagArticleWithRow[row]) tagArticleWithRow[row] = [];
-      //   tagArticleWithRow[row].push(postContent);
-      // });
-
       await Promise.all(
         tagArticle.map(async (item, i) => {
           const row = Math.floor(i / 3);
@@ -91,7 +65,6 @@ const mediumAPIService = async (userName) => {
           const postId = element[element.length - 1];
           const postLink = item.guid;
           const scrappedJson = await scrapRequest(postLink, postId);
-          console.log(scrappedJson, "SABE");
 
           let postContent = {
             author: item.author,
