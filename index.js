@@ -19,6 +19,10 @@ app.get("/", (req, res) => {
   res.send("Hello, Welcome to the Medium API");
 });
 
+app.get(`/advanced/medium/user/:userId`, async (req, res) => {
+  res.send(await mediumAPIService(req.params.userId, true));
+});
+
 app.get(`/medium/user/:userId`, async (req, res) => {
-  res.send(await mediumAPIService(req.params.userId));
+  res.send(await mediumAPIService(req.params.userId, false));
 });
