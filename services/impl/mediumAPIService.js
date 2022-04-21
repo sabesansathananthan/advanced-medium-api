@@ -2,7 +2,7 @@ const axios = require("axios");
 const sortAndSetCategory = require("../../utils/sortAndSetCategeory");
 const scrapRequest = require("../../utils/request");
 
-const mediumAPIService = async (userName) => {
+const mediumAPIService = async (userName, advanced) => {
   const mediumURL = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${userName}`;
 
   return await axios
@@ -64,26 +64,44 @@ const mediumAPIService = async (userName) => {
           const element = item.guid.split("/");
           const postId = element[element.length - 1];
           const postLink = item.guid;
-          const scrappedJson = await scrapRequest(postLink, postId);
 
-          let postContent = {
-            author: item.author,
-            avatar: item.avatar,
-            content: item.content,
-            link: item.guid,
-            postImage: item.thumbnail,
-            profileLink: item.profileLink,
-            pubDate: item.pubDate,
-            tag: item.tag,
-            tagOrder: item.tagNo,
-            title: item.title,
-            clapCount: scrappedJson.clapCount,
-            voterCount: scrappedJson.voterCount,
-            responseCount: scrappedJson.responseCount,
-            readingTime: scrappedJson.readingTime,
-          };
-          if (!tagArticleWithRow[row]) tagArticleWithRow[row] = [];
-          tagArticleWithRow[row].push(postContent);
+          if (advanced === true) {
+            const scrappedJson = await scrapRequest(postLink, postId);
+
+            let postContent = {
+              author: item.author,
+              avatar: item.avatar,
+              content: item.content,
+              link: item.guid,
+              postImage: item.thumbnail,
+              profileLink: item.profileLink,
+              pubDate: item.pubDate,
+              tag: item.tag,
+              tagOrder: item.tagNo,
+              title: item.title,
+              clapCount: scrappedJson.clapCount,
+              voterCount: scrappedJson.voterCount,
+              responseCount: scrappedJson.responseCount,
+              readingTime: scrappedJson.readingTime,
+            };
+            if (!tagArticleWithRow[row]) tagArticleWithRow[row] = [];
+            tagArticleWithRow[row].push(postContent);
+          } else {
+            let postContent = {
+              author: item.author,
+              avatar: item.avatar,
+              content: item.content,
+              link: item.guid,
+              postImage: item.thumbnail,
+              profileLink: item.profileLink,
+              pubDate: item.pubDate,
+              tag: item.tag,
+              tagOrder: item.tagNo,
+              title: item.title,
+            };
+            if (!tagArticleWithRow[row]) tagArticleWithRow[row] = [];
+            tagArticleWithRow[row].push(postContent);
+          }
         })
       );
 
