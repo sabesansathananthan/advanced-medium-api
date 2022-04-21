@@ -16,7 +16,7 @@ app.listen(process.env.PORT || port, () => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Hello, Welcome to the Medium API");
+  res.send("Hello, Welcome to the Advanced Medium API");
 });
 
 app.get(`/advanced/medium/user/:userId`, async (req, res) => {
