@@ -110,7 +110,7 @@ const mediumAPIService = async (userName, category) => {
       } else {
         if (category === "an") {
           await Promise.all(
-            posts.map(async (item) => {
+            items.map(async (item) => {
               const element = item.guid.split("/");
               const postId = element[element.length - 1];
               const postLink = item.guid;
@@ -122,7 +122,7 @@ const mediumAPIService = async (userName, category) => {
             })
           );
         }
-        return posts;
+        return response.data;
       }
     })
     .catch((err) => console.log(err));
