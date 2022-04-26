@@ -5,6 +5,7 @@ const app = express();
 const port = 9002;
 
 const mediumAPIService = require("./services/impl/mediumAPIService");
+const statsRequest = require("./utils/request");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -37,4 +38,9 @@ app.get(`/medium/user/:userId`, async (req, res) => {
 
 app.get(`/advanced/user/:userId`, async (req, res) => {
   res.send(await mediumAPIService(req.params.userId, "an"));
+});
+
+app.get("/medium/post/:postId", async (req, res) => {
+  const postId = req.params.postId;
+  res.send(await statsRequest(`https://medium.com/p/${postId}`, postId));
 });
