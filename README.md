@@ -1,5 +1,7 @@
 # Advanced Medium API
 
+<img alt="Advanced Medium API" src="./assets/Logo.png"  align='center'/>
+
 ### Contents
 
 - [Overview](#1-overview)
@@ -28,7 +30,7 @@ end point: `/medium/user/{userId}`
 
 Medium gives public access to get [RSS feed](https://help.medium.com/hc/en-us/articles/214874118-Using-RSS-feeds-of-profiles-publications-and-topics) for the last 10 medium posts. This end point gives the direct JSON conversion of that RSS Feed.
 
-[Sample JSON](./docs/NormalData.json)
+[Sample JSON](./assets/docs/NormalData.json)
 
 #### description for the `feed` object's key values
 
@@ -62,7 +64,7 @@ end point: `/advanced/user/{userId}`
 
 This endpoint return the response which contains the above Medium feed in JSON and moreover it contains the missing part of the Medium feed such as `clapCount`, `voterCount`, `responseCount`, `readingTime`.
 
-[Sample JSON](./docs/NormalAdvancedData.json)
+[Sample JSON](./assets/docs/NormalAdvancedData.json)
 
 #### description for missing part of Medium object's key values
 
@@ -79,7 +81,7 @@ end point: `/customized/user/{userId}`
 
 This endpoint return the response which is the customized version of the JSON conversion of the Medium's RSS Feed. Order the Medium post's tags according to their use count among the latest 10 posts and the `tagOrder` return that tags' order rank. Medium's latest 10 posts were divide by 3 and every 3 posts pushed in an array and those arrays pushed in one array.
 
-[Sample JSON](./docs/CustomizedData.json)
+[Sample JSON](./assets/docs/CustomizedData.json)
 
 #### description for customized Medium object's key values
 
@@ -102,7 +104,7 @@ end point: `/advanced/customized/user/{userId}`
 
 This endpoint return the response which contains the above Medium feed in JSON and moreover it contains the [missing part of the Medium feed](#description-for-missing-part-of-medium-objects-key-values) such as `clapCount`, `voterCount`, `responseCount`, `readingTime`.
 
-[Sample JSON](./docs/CustomizedAdvancedData.json)
+[Sample JSON](./assets/docs/CustomizedAdvancedData.json)
 
 ## 3. Built with
 
