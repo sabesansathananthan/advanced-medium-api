@@ -1,7 +1,8 @@
 # Advanced Medium API
 
+<p align="center">
 <img alt="Advanced Medium API" src="./assets/Logo.png"  align='center'/>
-
+</p>
 ### Contents
 
 - [Overview](#1-overview)
