@@ -8,15 +8,15 @@
   - [Medium Advanced Data](#22-medium-advanced-data)
   - [Medium Customized Data](#23-medium-customized-data)
   - [Medium Customized Advanced Data](#24-medium-customized-advanced-data)
-- [Built With](#3-🛠️built-with)
+- [Built With](#3-built-with)
 - [Installation](#4-installation)
 - [Live Demo](#5-live-demohttpsadvanced-medium-apiherokuappcom)
-- [License](#6-📄-license)
+- [License](#6-license)
 
 ## 1. Overview
 
-Advanced [Medium](https://medium.com) API is a JSON-based API. All requests are made to endpoints beginning (`base URL`): [https://advanced-medium-api.herokuapp.com/](https://advanced-medium-api.herokuapp.com/).All requests must be secure, i.e. `https`, not `http`.
-This API aims to retrieve the missing parts of Medium's [Rss feed](https://help.medium.com/hc/en-us/articles/214874118-Using-RSS-feeds-of-profiles-publications-and-topics)
+Advanced [Medium](https://medium.com) API is a JSON-based API. All requests are made to endpoints beginning (`base URL`): [https://advanced-medium-api.herokuapp.com/](https://advanced-medium-api.herokuapp.com/) .All requests must be secure, i.e. `https`, not `http`.
+This API aims to retrieve the missing parts of Medium's [Rss feed](https://help.medium.com/hc/en-us/articles/214874118-Using-RSS-feeds-of-profiles-publications-and-topics). All the requests are `GET` Requests.
 
 ## 2. API Details
 
@@ -104,7 +104,7 @@ This endpoint return the response which contains the above Medium feed in JSON a
 
 [Sample JSON](./docs/CustomizedAdvancedData.json)
 
-## 3. 🛠️Built with
+## 3. Built with
 
 - [express](https://expressjs.com/) - A minimal and flexible Node.js web application framework
 - [cors](https://github.com/expressjs/cors) - Allows users to relax the security applied to an API
@@ -141,6 +141,6 @@ To setup the app for development on your local machine, please follow the instru
 
 Don't forget to give a star :star: for this repo :slightly_smiling_face:
 
-## 6. 📄 License
+## 6. License
 
 This project is licensed under the MIT License - see the [LICENSE](./.github/LICENSE) file for details
