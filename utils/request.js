@@ -1,6 +1,5 @@
 const request = require("request");
 const cheerio = require("cheerio");
-const axios = require("axios");
 
 const scrapRequest = async (postLink, postId) => {
   return await new Promise((resolve, reject) => {
