@@ -12,6 +12,7 @@
   - [Medium Advanced Data](#22-medium-advanced-data)
   - [Medium Customized Data](#23-medium-customized-data)
   - [Medium Customized Advanced Data](#24-medium-customized-advanced-data)
+  - [Missing data of particular post](#25-missing-data-of-particular-post)
 - [Built With](#3-built-with)
 - [Installation](#4-installation)
 - [Live Demo](#5-live-demohttpsadvanced-medium-apiherokuappcom)
@@ -24,7 +25,7 @@ This API aims to retrieve the missing parts of Medium's [Rss feed](https://help.
 
 ## 2. API Details
 
-Users could be able to get 4 types of responses from this API.
+Users could be able to get 5 types of responses from this API.
 
 ### 2.1 Medium feed in JSON
 
@@ -107,6 +108,14 @@ end point: `/advanced/customized/user/{userId}`
 This endpoint return the response which contains the above Medium feed in JSON and moreover it contains the [missing part of the Medium feed](#description-for-missing-part-of-medium-objects-key-values) such as `clapCount`, `voterCount`, `responseCount`, `readingTime`.
 
 [Sample JSON](./assets/docs/CustomizedAdvancedData.json)
+
+### 2.5 Missing data of particular post.
+
+end point: `/medium/post/{postId}`
+
+User could able to get only the missing part (`clapCount`, `voterCount`, `responseCount`, `readingTime`) of Medium feed.
+
+[Sample JSON](./assets/docs/AdvancedPostDetails.json)
 
 ## 3. Built with
 
