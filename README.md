@@ -97,7 +97,7 @@ This endpoint return the response which is the customized version of the JSON co
 |  `postImage`  |                      Thumbnail of the Medium post                       |
 | `profileLink` |                     Hyperlink to the Medium profile                     |
 |   `pubDate`   |                    Published date of the Medium post                    |
-|     `tag`     | Most suitable tag for the Medium post among other tags of a Medium Post |
+|     `tag`     | Most suitable tag for the Medium post among other tags of a Medium post |
 |  `tagOrder`   |                            tags' order rank                             |
 |    `title`    |                        Title of the Medium post                         |
 
@@ -105,7 +105,7 @@ This endpoint return the response which is the customized version of the JSON co
 
 end point: `/advanced/customized/user/{userId}`
 
-This endpoint return the response which contains the above Medium feed in JSON and moreover it contains the [missing part of the Medium feed](#description-for-missing-part-of-medium-objects-key-values) such as `clapCount`, `voterCount`, `responseCount`, `readingTime`.
+This endpoint return the response which contains the above customized Medium feed in JSON and moreover it contains the [missing part of the Medium feed](#description-for-missing-part-of-medium-objects-key-values) such as `clapCount`, `voterCount`, `responseCount`, `readingTime`.
 
 [Sample JSON](./assets/docs/CustomizedAdvancedData.json)
 
