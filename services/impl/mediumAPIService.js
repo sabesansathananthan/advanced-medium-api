@@ -1,6 +1,7 @@
 const axios = require("axios");
 const sortAndSetCategory = require("../../utils/sortAndSetCategeory");
 const scrapRequest = require("../../utils/request");
+const sortDate = require("../../utils/sortDate");
 
 const mediumAPIService = async (userName, category) => {
   const mediumURL = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${userName}`;
@@ -61,7 +62,6 @@ const mediumAPIService = async (userName, category) => {
 
         await Promise.all(
           tagArticle.map(async (item, i) => {
-            const row = Math.floor(i / 3);
             const element = item.guid.split("/");
             const postId = element[element.length - 1];
             const postLink = item.guid;
@@ -85,8 +85,7 @@ const mediumAPIService = async (userName, category) => {
                 responseCount: scrappedJson.responseCount,
                 readingTime: scrappedJson.readingTime,
               };
-              if (!tagArticleWithRow[row]) tagArticleWithRow[row] = [];
-              tagArticleWithRow[row].push(postContent);
+              tagArticleWithRow.push(postContent);
             } else {
               let postContent = {
                 author: item.author,
@@ -100,13 +99,13 @@ const mediumAPIService = async (userName, category) => {
                 tagOrder: item.tagNo,
                 title: item.title,
               };
-              if (!tagArticleWithRow[row]) tagArticleWithRow[row] = [];
-              tagArticleWithRow[row].push(postContent);
+
+              tagArticleWithRow.push(postContent);
             }
           })
         );
 
-        return await tagArticleWithRow;
+        return await tagArticleWithRow.sort(sortDate);
       } else {
         if (category === "an") {
           await Promise.all(
@@ -122,7 +121,7 @@ const mediumAPIService = async (userName, category) => {
             })
           );
         }
-        return response.data;
+        return response.data.sort(sortDate);
       }
     })
     .catch((err) => console.log(err));
